@@ -25,10 +25,20 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    /*testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation('org.springframework.boot:spring-boot-starter-web')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')*/
+
+    testCompile group: 'junit', name:'junit', version:4.12
+
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.projectlombok:lombok')//getter, setter, 기본생성자, toString() 자동셋팅 (룸북)
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')//스프링부트 버전에 맞춰 자동으로 Jpa관련 라이브러리들의 버전관리
+    compile('com.h2database:h2')//인메모리 관계형 데이터베이스 - 별도 설치 없이 프로젝트 의존성만으로 관리, 메모리에서 실행(재시작할때마다 초기화)이 되기 때문에 테스트 용도로 많이 사용
+    compile('org.springframework.boot:spring-boot-starter-mustache')
+
 }
 
 test {
