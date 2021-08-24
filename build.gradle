@@ -39,9 +39,10 @@ dependencies {
     compile('com.h2database:h2')//인메모리 관계형 데이터베이스 - 별도 설치 없이 프로젝트 의존성만으로 관리, 메모리에서 실행(재시작할때마다 초기화)이 되기 때문에 테스트 용도로 많이 사용
     compile('org.springframework.boot:spring-boot-starter-mustache')
     compile('org.springframework.boot:spring-boot-starter-oauth2-client') // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현시 필요한 의존성
-
+    compile('org.springframework.session:spring-session-jdbc')
+    testCompile("org.springframework.security:spring-security-test")
 }
 
-test {
+/*test {
     useJUnitPlatform()
-}
+}*/
